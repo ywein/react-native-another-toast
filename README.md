@@ -27,7 +27,7 @@ class Example extends Component {
 
 ### Examples
 ```js
-//Simple toast that fades from at the top via the state change
+//Simple toast that fades at the top via the state change
 class Example extends Component {
 
   constructor(props) {
