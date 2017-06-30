@@ -150,7 +150,7 @@ this.toast.closeToast()
 * `git clone https://github.com/ywein/react-native-another-toast.git`
 * `cd react-native-another-toast/examples/toast && npm install`
 * **iOS**
-	* Open ``./examples/toast/ios/toast.xcodeproject` in xcode
+	* Open `./examples/toast/ios/toast.xcodeproject` in xcode
 	* `command+r` (in xcode)
 * **Android**
 	* Run android simulator / plug in your android device
