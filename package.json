@@ -1,0 +1,43 @@
+{
+  "name": "react-native-another-toast",
+  "version": "0.0.1",
+  "description": "React Native Toast",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:rt2zz/react-native-drawer.git"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+		"eslint": "3.19.0",
+		"eslint-config-airbnb": "^15.0.1",
+		"eslint-plugin-babel": "^4.1.1",
+		"eslint-plugin-import": "2.2.0",
+		"eslint-plugin-jsx-a11y": "5.0.1",
+		"eslint-plugin-promise": "^3.5.0",
+		"eslint-plugin-react": "7.0.1",
+		"jest": "20.0.4",
+		"react-test-renderer": "16.0.0-alpha.12"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "react-component",
+    "toast",
+    "toast-notifications",
+    "toast-message",
+    "ios",
+    "android"
+  ],
+  "author": "ywein <trueblamed@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rt2zz/react-native-drawer/issues"
+  },
+  "homepage": "https://github.com/rt2zz/react-native-drawer"
+}
