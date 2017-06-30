@@ -135,6 +135,16 @@ class Example extends Component {
 - `animationType` - (String: [slide, fade]) `slide` - Decides on the animation type.
 - `animationDuration` - (Number) `350` - Animation duration.
 
+### Methods
+
+- `showToast` - Will show the toast. 
+```js
+this.toast.showToast()
+```
+- `closeToast` - Will close the toast. 
+```js
+this.toast.closeToast()
+```
 
 ### Demo
 * `git clone https://github.com/ywein/react-native-another-toast.git`
