@@ -156,7 +156,7 @@ this.toast.closeToast()
 	* Run android simulator / plug in your android device
 	* Run `react-native run-android` in terminal
 	
-## TODO
+### TODO
 
 The following is left to be done:
 
