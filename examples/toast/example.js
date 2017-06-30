@@ -14,6 +14,12 @@ import Toast from 'react-native-another-toast'
 
 export default class Example extends Component {
 
+  constructor(props) {
+    super(props)
+    this.showToast = this.showToast.bind(this)
+    this.closeToast = this.closeToast.bind(this)
+  }
+
   state = {
     text: 'Toast text',
     autoClose: true,
@@ -27,6 +33,10 @@ export default class Example extends Component {
 
   showToast() {
     this.toast.showToast()
+  }
+
+  closeToast() {
+    this.toast.closeToast()
   }
 
   render() {
@@ -113,7 +123,7 @@ export default class Example extends Component {
           </View>
         </View>
 
-        <TouchableHighlight onPress={this.showToast.bind(this)}>
+        <TouchableHighlight onPress={this.showToast}>
           <View style={{ paddingVertical: 8, paddingHorizontal: 15, backgroundColor: '#3b3b3b' }}>
             <Text style={{ color: '#fff' }}>Press Me</Text>
           </View>
@@ -123,7 +133,7 @@ export default class Example extends Component {
           textStyle={{ color: '#cccccc', fontSize: 21 }}
           toastStyle={{ backgroundColor: '#3b3b3b' }}
           underlayColor='#515151'
-          onToastClick={this.testClick}
+          onToastTap={this.closeToast}
           autoClose={this.state.autoClose}
           autoCloseTimeout={this.state.autoCloseTimeout}
           slide={this.state.slide}

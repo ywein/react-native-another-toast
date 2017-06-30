@@ -115,7 +115,7 @@ class Toast extends React.PureComponent {
   }
 
   render() {
-    const { content, text, textStyle, toastStyle, onToastClick, position, slide, animationType, underlayColor, topBottomDistance } = this.props
+    const { content, text, textStyle, toastStyle, onToastTap, position, slide, animationType, underlayColor, topBottomDistance } = this.props
 
     const additionStyles = {}
 
@@ -148,7 +148,7 @@ class Toast extends React.PureComponent {
 
     return (
       <Animated.View style={[styles.toast, additionStyles, toastStyle]}>
-        <TouchableHighlight activeOpacity={0.8} underlayColor={underlayColor} style={[{ flex: 1, justifyContent: 'center' }]} onPress={(onToastClick || this.closeToast)}>
+        <TouchableHighlight activeOpacity={0.8} underlayColor={underlayColor} style={[{ flex: 1, justifyContent: 'center' }]} onPress={(onToastTap || this.closeToast)}>
           {inner}
         </TouchableHighlight>
       </Animated.View>
@@ -163,7 +163,7 @@ Toast.propTypes = {
   textStyle: React.PropTypes.object,
   toastStyle: React.PropTypes.object,
   underlayColor: React.PropTypes.string,
-  onToastClick: React.PropTypes.func,
+  onToastTap: React.PropTypes.func,
   autoClose: React.PropTypes.bool,
   autoCloseTimeout: React.PropTypes.number,
   onClose: React.PropTypes.func,
@@ -181,15 +181,15 @@ Toast.defaultProps = {
   textStyle: {},
   toastStyle: {},
   underlayColor: '#515151',
-  onToastClick: null,
+  onToastTap: null,
   autoClose: true,
   autoCloseTimeout: 2000,
   showToast: false,
   slide: 'vertical', // [vertical, horizontal]
   position: 'bottom', // [top, bottom]
-  topBottomDistance: 30,
+  topBottomDistance: 10,
   animationType: 'slide', // [slide, fade]
-  animationDuration: 500,
+  animationDuration: 350,
   onClose: () => {},
 }
 
