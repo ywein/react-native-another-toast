@@ -155,3 +155,10 @@ this.toast.closeToast()
 * **Android**
 	* Run android simulator / plug in your android device
 	* Run `react-native run-android` in terminal
+	
+## TODO
+
+The following is left to be done:
+
+- [ ] Different Touchable components per platform.
+- [ ] Customizable animation function. 
