@@ -27,7 +27,7 @@ class Example extends Component {
 
 ### Examples
 ```js
-//Simple toast that fades from at the top via the state change
+//Simple toast that fades at the top via the state change
 class Example extends Component {
 
   constructor(props) {
@@ -155,3 +155,10 @@ this.toast.closeToast()
 * **Android**
 	* Run android simulator / plug in your android device
 	* Run `react-native run-android` in terminal
+	
+### TODO
+
+The following is left to be done:
+
+- [ ] Different Touchable components per platform.
+- [ ] Customizable animation function. 
