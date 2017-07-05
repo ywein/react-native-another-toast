@@ -3458,9 +3458,9 @@ react-devtools-core@^2.1.8:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
-react-native-another-toast@latest:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/react-native-another-toast/-/react-native-another-toast-0.0.1.tgz#83ce518333e43297c66392823ebd620f19cd2568"
+react-native-another-toast@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/react-native-another-toast/-/react-native-another-toast-0.0.3.tgz#29d5e0753f16d6139a6fb888e855748a022139bf"
 
 react-native@0.45.1:
   version "0.45.1"

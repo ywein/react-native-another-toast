@@ -1,12 +1,15 @@
 import React from 'react'
 
-import { Text, Animated, TouchableHighlight, StyleSheet, Dimensions } from 'react-native'
+import { Text, View, Animated, TouchableHighlight, StyleSheet, Dimensions } from 'react-native'
 
 const styles = StyleSheet.create({
-  toast: {
+  toastWrapper: {
     position: 'absolute',
-    left: 0,
-    transform: [{ translateX: Dimensions.get('window').width * 0.05 }],
+    width: Dimensions.get('window').width,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  toast: {
     width: Dimensions.get('window').width * 0.9,
     height: 50,
     backgroundColor: '#3B3B3B',
@@ -147,10 +150,12 @@ class Toast extends React.PureComponent {
     }
 
     return (
-      <Animated.View style={[styles.toast, additionStyles, toastStyle]}>
-        <TouchableHighlight activeOpacity={0.8} underlayColor={underlayColor} style={[{ flex: 1, justifyContent: 'center' }]} onPress={(onToastTap || this.closeToast)}>
-          {inner}
-        </TouchableHighlight>
+      <Animated.View style={[styles.toastWrapper, additionStyles]}>
+        <View style={[styles.toast, toastStyle]}>
+          <TouchableHighlight activeOpacity={0.8} underlayColor={underlayColor} style={[{ flex: 1, justifyContent: 'center' }]} onPress={(onToastTap || this.closeToast)}>
+            {inner}
+          </TouchableHighlight>
+        </View>
       </Animated.View>
 
     )
@@ -190,7 +195,7 @@ Toast.defaultProps = {
   topBottomDistance: 10,
   animationType: 'slide', // [slide, fade]
   animationDuration: 350,
-  onClose: () => {},
+  onClose: () => { },
 }
 
 export default Toast

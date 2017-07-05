@@ -9,7 +9,7 @@
 	"dependencies": {
 		"react": "16.0.0-alpha.12",
 		"react-native": "0.45.1",
-		"react-native-another-toast": "latest"
+		"react-native-another-toast": "^0.0.3"
 	},
 	"devDependencies": {
 		"babel-eslint": "^7.2.3",

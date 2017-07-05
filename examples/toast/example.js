@@ -153,7 +153,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'center',
-    width: Dimensions.get('window').width,
   },
   inputBlock: {
     padding: 10,
