@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Text, View, Animated, TouchableHighlight, StyleSheet, Dimensions } from 'react-native'
+import { Text, View, Animated, TouchableHighlight, TouchableNativeFeedback, StyleSheet, Dimensions, Platform } from 'react-native'
 
 const styles = StyleSheet.create({
   toastWrapper: {
@@ -118,7 +118,7 @@ class Toast extends React.PureComponent {
   }
 
   render() {
-    const { content, text, textStyle, toastStyle, onToastTap, position, slide, animationType, underlayColor, topBottomDistance } = this.props
+    const { content, text, textStyle, toastStyle, onToastTap, position, slide, animationType, underlayColor, activeOpacity, rippleColor, topBottomDistance } = this.props
 
     const additionStyles = {}
 
@@ -146,15 +146,31 @@ class Toast extends React.PureComponent {
     if (content) {
       inner = content
     } else {
-      inner = <Text style={[styles.toastText, textStyle]}>{text}</Text>
+      inner =
+        (<View style={{ flex: 1, justifyContent: 'center' }}>
+          <Text style={[styles.toastText, textStyle]}>{text}</Text>
+        </View>)
+    }
+
+    let Component
+    if (Platform.OS === 'android') {
+      Component = TouchableNativeFeedback
+    } else {
+      Component = TouchableHighlight
     }
 
     return (
       <Animated.View style={[styles.toastWrapper, additionStyles]}>
         <View style={[styles.toast, toastStyle]}>
-          <TouchableHighlight activeOpacity={0.8} underlayColor={underlayColor} style={[{ flex: 1, justifyContent: 'center' }]} onPress={(onToastTap || this.closeToast)}>
+          <Component
+            background={TouchableNativeFeedback.Ripple(rippleColor)}
+            activeOpacity={activeOpacity}
+            underlayColor={underlayColor}
+            style={[{ flex: 1 }]}
+            onPress={(onToastTap || this.closeToast)}
+          >
             {inner}
-          </TouchableHighlight>
+          </Component>
         </View>
       </Animated.View>
 
@@ -167,6 +183,8 @@ Toast.propTypes = {
   text: React.PropTypes.string,
   textStyle: React.PropTypes.object,
   toastStyle: React.PropTypes.object,
+  rippleColor: React.PropTypes.string,
+  activeOpacity: React.PropTypes.number,
   underlayColor: React.PropTypes.string,
   onToastTap: React.PropTypes.func,
   autoClose: React.PropTypes.bool,
@@ -185,7 +203,9 @@ Toast.defaultProps = {
   text: 'Toast',
   textStyle: {},
   toastStyle: {},
+  rippleColor: '#ffffff',
   underlayColor: '#515151',
+  activeOpacity: 0.8,
   onToastTap: null,
   autoClose: true,
   autoCloseTimeout: 2000,
