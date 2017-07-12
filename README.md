@@ -54,7 +54,7 @@ class Example extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1, width: Dimensions.get('window').width, justifyContent: 'center' }}>
+      <View style={{ flex: 1, justifyContent: 'center' }}>
         <TouchableHighlight onPress={this.showToast}>
           <View style={{ paddingVertical: 8, paddingHorizontal: 15, backgroundColor: '#3b3b3b' }}>
             <Text style={{ color: '#fff', textAlign: 'center' }}>Press Me</Text>
@@ -92,7 +92,7 @@ class Example extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1, width: Dimensions.get('window').width, justifyContent: 'center' }}>
+      <View style={{ flex: 1, justifyContent: 'center' }}>
         <TouchableHighlight onPress={this.showToast}>
           <View style={{ paddingVertical: 8, paddingHorizontal: 15, backgroundColor: '#3b3b3b' }}>
             <Text style={{ color: '#fff', textAlign: 'center' }}>Press Me</Text>
@@ -123,7 +123,8 @@ class Example extends Component {
 - `text` - (String) `Toast` - text that will be shown in the toast, if `content` is null.
 - `textStyle` - (Object) - Styles for the text element. 
 - `toastStyle` - (Object) - Styles for the toast element.
-- `underlayColor` - (String) `#515151` - Color of the underlay for TouchableHighlight element of the toast. Recommended to be slightly lighter or darker than main background.
+- `rippleColor` - (String) `#ffffff` - Color of the ripple for TouchableNativeFeedback element. (Android)
+- `underlayColor` - (String) `#515151` - Color of the underlay for TouchableHighlight element of the toast. Recommended to be slightly lighter or darker than main background. (iOS)
 - `onToastTap` - (Function) `null` - Will be called on the tap on the toast element. By default (if null) will call internal function that will close the toast. If provided - internal function will not be called.
 - `autoClose` - (Boolean) `true` - Decides if we should close the toast automatically after timeout.
 - `autoCloseTimeout` - (Number) `2000` - Timeout for autoClose.
