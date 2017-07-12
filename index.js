@@ -163,7 +163,7 @@ class Toast extends React.PureComponent {
       <Animated.View style={[styles.toastWrapper, additionStyles]}>
         <View style={[styles.toast, toastStyle]}>
           <Component
-            background={TouchableNativeFeedback.Ripple(rippleColor)}
+            background={(Platform.OS === 'android' ? TouchableNativeFeedback.Ripple(rippleColor) : null)}
             activeOpacity={activeOpacity}
             underlayColor={underlayColor}
             style={[{ flex: 1 }]}
