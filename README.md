@@ -161,5 +161,5 @@ this.toast.closeToast()
 
 The following is left to be done:
 
-- [ ] Different Touchable components per platform.
+- [x] Different Touchable components per platform.
 - [ ] Customizable animation function. 
