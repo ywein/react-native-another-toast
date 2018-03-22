@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { Text, View, Animated, TouchableHighlight, TouchableNativeFeedback, StyleSheet, Dimensions, Platform } from 'react-native'
 
@@ -179,23 +180,23 @@ class Toast extends React.PureComponent {
 }
 
 Toast.propTypes = {
-  content: React.PropTypes.object,
-  text: React.PropTypes.string,
-  textStyle: React.PropTypes.object,
-  toastStyle: React.PropTypes.object,
-  rippleColor: React.PropTypes.string,
-  activeOpacity: React.PropTypes.number,
-  underlayColor: React.PropTypes.string,
-  onToastTap: React.PropTypes.func,
-  autoClose: React.PropTypes.bool,
-  autoCloseTimeout: React.PropTypes.number,
-  onClose: React.PropTypes.func,
-  showToast: React.PropTypes.bool,
-  slide: React.PropTypes.oneOf(['vertical', 'horizontal']),
-  position: React.PropTypes.oneOf(['top', 'bottom']),
-  topBottomDistance: React.PropTypes.number,
-  animationType: React.PropTypes.oneOf(['slide', 'fade']),
-  animationDuration: React.PropTypes.number,
+  content: PropTypes.object,
+  text: PropTypes.string,
+  textStyle: PropTypes.object,
+  toastStyle: PropTypes.object,
+  rippleColor: PropTypes.string,
+  activeOpacity: PropTypes.number,
+  underlayColor: PropTypes.string,
+  onToastTap: PropTypes.func,
+  autoClose: PropTypes.bool,
+  autoCloseTimeout: PropTypes.number,
+  onClose: PropTypes.func,
+  showToast: PropTypes.bool,
+  slide: PropTypes.oneOf(['vertical', 'horizontal']),
+  position: PropTypes.oneOf(['top', 'bottom']),
+  topBottomDistance: PropTypes.number,
+  animationType: PropTypes.oneOf(['slide', 'fade']),
+  animationDuration: PropTypes.number,
 }
 
 Toast.defaultProps = {
