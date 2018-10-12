@@ -17,7 +17,7 @@ class Example extends Component {
     return (
       <Toast
           text='Toast text'
-          showToast={true]
+          showToast={true}
       />
     )
   }
